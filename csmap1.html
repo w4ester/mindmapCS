@@ -1,98 +1,140 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>ML & DS Mindmap</title>
-    <style>
-        body { 
-            margin: 0; 
-            width: 100vw;
-            height: 100vh;
-            overflow: hidden;
-        }
-        #mindmap { 
-            width: 100%;
-            height: 100%;
-        }
-    </style>
-</head>
-<body>
-    <svg id="mindmap"></svg>
-    <script src="https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.2.7/dist/index.min.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const mm = markmap.Markmap.create('svg#mindmap', undefined, {
-                type: 'root',
-                depth: 0,
-                content: 'Machine Learning & Data Science Program',
-                children: [
-                    {
-                        type: 'heading',
-                        depth: 1,
-                        content: 'Data Science I',
-                        children: [
-                            {
-                                type: 'list',
-                                depth: 2,
-                                content: 'Core Skills',
-                                children: [
-                                    { type: 'list-item', depth: 3, content: 'Python Programming' },
-                                    { type: 'list-item', depth: 3, content: 'Data Visualization' },
-                                    { type: 'list-item', depth: 3, content: 'Basic Machine Learning' },
-                                    { type: 'list-item', depth: 3, content: 'Statistical Analysis' }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        type: 'heading',
-                        depth: 1,
-                        content: 'Data Science II',
-                        children: [
-                            {
-                                type: 'list',
-                                depth: 2,
-                                content: 'Advanced Skills',
-                                children: [
-                                    { type: 'list-item', depth: 3, content: 'ML Model Deployment' },
-                                    { type: 'list-item', depth: 3, content: 'Data Ethics & Governance' },
-                                    { type: 'list-item', depth: 3, content: 'Advanced Analytics' }
-                                ]
-                            }
-                        ]
-                    },
-                    {
-                        type: 'heading',
-                        depth: 1,
-                        content: 'Flex Options',
-                        children: [
-                            {
-                                type: 'heading',
-                                depth: 2,
-                                content: 'Machine Learning III',
-                                children: [
-                                    { type: 'list-item', depth: 3, content: 'Deep Learning' },
-                                    { type: 'list-item', depth: 3, content: 'Neural Networks' },
-                                    { type: 'list-item', depth: 3, content: 'Computer Vision' },
-                                    { type: 'list-item', depth: 3, content: 'NLP' }
-                                ]
-                            },
-                            {
-                                type: 'heading',
-                                depth: 2,
-                                content: 'Machine Learning IV',
-                                children: [
-                                    { type: 'list-item', depth: 3, content: 'AI Ethics' },
-                                    { type: 'list-item', depth: 3, content: 'Model Governance' },
-                                    { type: 'list-item', depth: 3, content: 'Enterprise ML' }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-            });
-        });
-    </script>
-</body>
-</html>
+import React, { useState } from 'react';
+import { ChevronRight, ChevronDown } from 'lucide-react';
+
+const TreeNode = ({ data, level = 0 }) => {
+  const [isExpanded, setIsExpanded] = useState(level < 2);
+  const hasChildren = data.children && data.children.length > 0;
+  
+  const toggleExpand = (e) => {
+    e.stopPropagation();
+    setIsExpanded(!isExpanded);
+  };
+
+  return (
+    <div className="ml-4">
+      <div 
+        className={`flex items-center p-2 rounded-lg hover:bg-blue-50 cursor-pointer ${
+          level === 0 ? 'bg-blue-100' : ''
+        }`}
+        onClick={toggleExpand}
+      >
+        {hasChildren && (
+          <span className="mr-2">
+            {isExpanded ? (
+              <ChevronDown className="w-4 h-4 text-blue-500" />
+            ) : (
+              <ChevronRight className="w-4 h-4 text-blue-500" />
+            )}
+          </span>
+        )}
+        <span className={`${level === 0 ? 'text-lg font-bold' : level === 1 ? 'text-md font-semibold' : 'text-sm'}`}>
+          {data.name}
+        </span>
+      </div>
+      {hasChildren && isExpanded && (
+        <div className="border-l-2 border-blue-200 ml-2">
+          {data.children.map((child, index) => (
+            <TreeNode key={`${child.name}-${index}`} data={child} level={level + 1} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+const CurriculumMindmap = () => {
+  const curriculumData = {
+    name: "Machine Learning & Data Science Program",
+    children: [
+      {
+        name: "Foundations",
+        children: [
+          {
+            name: "Mathematics",
+            children: [
+              { name: "Linear Algebra" },
+              { name: "Calculus" },
+              { name: "Statistics" },
+              { name: "Probability Theory" }
+            ]
+          },
+          {
+            name: "Programming",
+            children: [
+              { name: "Python" },
+              { name: "SQL" },
+              { name: "Git & Version Control" }
+            ]
+          }
+        ]
+      },
+      {
+        name: "Data Science Core",
+        children: [
+          {
+            name: "Data Processing",
+            children: [
+              { name: "Data Cleaning" },
+              { name: "Feature Engineering" },
+              { name: "ETL Pipelines" }
+            ]
+          },
+          {
+            name: "Data Analysis",
+            children: [
+              { name: "Exploratory Data Analysis" },
+              { name: "Statistical Analysis" },
+              { name: "Data Visualization" }
+            ]
+          }
+        ]
+      },
+      {
+        name: "Machine Learning",
+        children: [
+          {
+            name: "Supervised Learning",
+            children: [
+              { name: "Classification" },
+              { name: "Regression" },
+              { name: "Neural Networks" }
+            ]
+          },
+          {
+            name: "Unsupervised Learning",
+            children: [
+              { name: "Clustering" },
+              { name: "Dimensionality Reduction" },
+              { name: "Anomaly Detection" }
+            ]
+          },
+          {
+            name: "Advanced Topics",
+            children: [
+              { name: "Deep Learning" },
+              { name: "Natural Language Processing" },
+              { name: "Computer Vision" }
+            ]
+          }
+        ]
+      },
+      {
+        name: "Professional Skills",
+        children: [
+          { name: "Project Management" },
+          { name: "Communication" },
+          { name: "Ethics in AI" },
+          { name: "Business Understanding" }
+        ]
+      }
+    ]
+  };
+
+  return (
+    <div className="max-w-4xl mx-auto p-4 bg-white rounded-xl shadow-lg">
+      <TreeNode data={curriculumData} />
+    </div>
+  );
+};
+
+export default CurriculumMindmap;
