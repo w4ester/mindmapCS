@@ -1,86 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machine Learning & Data Science Flex Model Mind Map</title>
-    <style>
-        #mindmap {
-            display: block;
-            width: 100vw;
-            height: 100vh;
-        }
-    </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.3-alpha.1/dist/style.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
-</head>
-<body>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+    <!-- Main title -->
+    <text x="600" y="50" text-anchor="middle" font-size="24" font-weight="bold" fill="#2c3e50">Machine Learning & Data Science Flex Model Mind Map</text>
+    
+    <!-- Data Science I Section -->
+    <g transform="translate(200,150)">
+        <rect x="0" y="0" width="200" height="40" rx="5" fill="#3498db" opacity="0.8"/>
+        <text x="100" y="25" text-anchor="middle" fill="white" font-weight="bold">Data Science I</text>
+        
+        <!-- Core Skills -->
+        <path d="M100 40 L50 70" stroke="#95a5a6" stroke-width="2"/>
+        <rect x="0" y="70" width="100" height="60" rx="5" fill="#e74c3c" opacity="0.7"/>
+        <text x="50" y="90" text-anchor="middle" fill="white" font-size="12">Core Skills</text>
+        <text x="50" y="105" text-anchor="middle" fill="white" font-size="10">Python</text>
+        <text x="50" y="120" text-anchor="middle" fill="white" font-size="10">Data Viz</text>
+        
+        <!-- Tools -->
+        <path d="M100 40 L150 70" stroke="#95a5a6" stroke-width="2"/>
+        <rect x="100" y="70" width="100" height="60" rx="5" fill="#2ecc71" opacity="0.7"/>
+        <text x="150" y="90" text-anchor="middle" fill="white" font-size="12">Tools</text>
+        <text x="150" y="105" text-anchor="middle" fill="white" font-size="10">Google Cloud</text>
+        <text x="150" y="120" text-anchor="middle" fill="white" font-size="10">GitHub</text>
+    </g>
 
-<svg id="mindmap"></svg>
+    <!-- Data Science II Section -->
+    <g transform="translate(450,150)">
+        <rect x="0" y="0" width="200" height="40" rx="5" fill="#3498db" opacity="0.8"/>
+        <text x="100" y="25" text-anchor="middle" fill="white" font-weight="bold">Data Science II</text>
+        
+        <!-- Advanced Skills -->
+        <path d="M100 40 L50 70" stroke="#95a5a6" stroke-width="2"/>
+        <rect x="0" y="70" width="100" height="60" rx="5" fill="#e74c3c" opacity="0.7"/>
+        <text x="50" y="90" text-anchor="middle" fill="white" font-size="12">Adv. Skills</text>
+        <text x="50" y="105" text-anchor="middle" fill="white" font-size="10">ML Deploy</text>
+        <text x="50" y="120" text-anchor="middle" fill="white" font-size="10">Data Ethics</text>
+        
+        <!-- Certifications -->
+        <path d="M100 40 L150 70" stroke="#95a5a6" stroke-width="2"/>
+        <rect x="100" y="70" width="100" height="60" rx="5" fill="#f1c40f" opacity="0.7"/>
+        <text x="150" y="90" text-anchor="middle" fill="white" font-size="12">Certs</text>
+        <text x="150" y="105" text-anchor="middle" fill="white" font-size="10">IBM Watson</text>
+        <text x="150" y="120" text-anchor="middle" fill="white" font-size="10">GCP Data</text>
+    </g>
 
-<script src="https://cdn.jsdelivr.net/npm/d3@7.9.0/dist/d3.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/markmap-view@0.17.3-alpha.1/dist/browser/index.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.17.3-alpha.1/dist/index.js"></script>
+    <!-- Machine Learning I Section -->
+    <g transform="translate(700,150)">
+        <rect x="0" y="0" width="200" height="40" rx="5" fill="#3498db" opacity="0.8"/>
+        <text x="100" y="25" text-anchor="middle" fill="white" font-weight="bold">Machine Learning I</text>
+        
+        <!-- ML Skills -->
+        <path d="M100 40 L50 70" stroke="#95a5a6" stroke-width="2"/>
+        <rect x="0" y="70" width="100" height="60" rx="5" fill="#e74c3c" opacity="0.7"/>
+        <text x="50" y="90" text-anchor="middle" fill="white" font-size="12">ML Skills</text>
+        <text x="50" y="105" text-anchor="middle" fill="white" font-size="10">Supervised</text>
+        <text x="50" y="120" text-anchor="middle" fill="white" font-size="10">Evaluation</text>
+        
+        <!-- Resources -->
+        <path d="M100 40 L150 70" stroke="#95a5a6" stroke-width="2"/>
+        <rect x="100" y="70" width="100" height="60" rx="5" fill="#2ecc71" opacity="0.7"/>
+        <text x="150" y="90" text-anchor="middle" fill="white" font-size="12">Resources</text>
+        <text x="150" y="105" text-anchor="middle" fill="white" font-size="10">CS50 AI</text>
+        <text x="150" y="120" text-anchor="middle" fill="white" font-size="10">MS Learn</text>
+    </g>
 
-<script>
-    const markdown = `
-# Machine Learning & Data Science Flex Model Mind Map
-## Data Science I
-- **Core Skills**
-    - Python Programming
-    - Data Visualization
-    - Basic Machine Learning Techniques
-- **Certifications**
-    - [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science)
-- **Tools and Resources**
-    - [Google Cloud Training](https://cloud.google.com/training)
-    - [Microsoft Data Science for Beginners (GitHub)](https://github.com/microsoft/Data-Science-For-Beginners)
-    - [Stanford AI Tinkering Labs](https://aieducation.stanford.edu/)
+    <!-- Machine Learning II Section -->
+    <g transform="translate(950,150)">
+        <rect x="0" y="0" width="200" height="40" rx="5" fill="#3498db" opacity="0.8"/>
+        <text x="100" y="25" text-anchor="middle" fill="white" font-weight="bold">Machine Learning II</text>
+        
+        <!-- Advanced ML -->
+        <path d="M100 40 L50 70" stroke="#95a5a6" stroke-width="2"/>
+        <rect x="0" y="70" width="100" height="60" rx="5" fill="#e74c3c" opacity="0.7"/>
+        <text x="50" y="90" text-anchor="middle" fill="white" font-size="12">Adv. ML</text>
+        <text x="50" y="105" text-anchor="middle" fill="white" font-size="10">Deep Learning</text>
+        <text x="50" y="120" text-anchor="middle" fill="white" font-size="10">NLP</text>
+        
+        <!-- AWS Certs -->
+        <path d="M100 40 L150 70" stroke="#95a5a6" stroke-width="2"/>
+        <rect x="100" y="70" width="100" height="60" rx="5" fill="#f1c40f" opacity="0.7"/>
+        <text x="150" y="90" text-anchor="middle" fill="white" font-size="12">AWS Certs</text>
+        <text x="150" y="105" text-anchor="middle" fill="white" font-size="10">ML Specialty</text>
+        <text x="150" y="120" text-anchor="middle" fill="white" font-size="10">Azure Fund.</text>
+    </g>
 
-## Data Science II
-- **Core Skills**
-    - Advanced Data Processing
-    - Machine Learning Model Deployment
-    - Data Ethics and Governance
-- **Certifications**
-    - [IBM Watson AI Certification](https://www.coursera.org/learn/ai-watson)
-    - [Google Cloud Data Engineer](https://cloud.google.com/training)
-- **Tools and Resources**
-    - [NVIDIA Deep Learning Institute](https://developer.nvidia.com/dli)
-    - [Databricks Academy](https://databricks.com/learn)
-    - [Open Data Science Conference (ODSC)](https://odsc.com/)
-
-## Machine Learning I
-- **Core Skills**
-    - Supervised Learning
-    - Model Evaluation Techniques
-- **Certifications**
-    - [AWS Academy - Foundational ML](https://aws.amazon.com/training/awsacademy/)
-- **Tools and Resources**
-    - [CS50 AI Course](https://cs50.harvard.edu/ai/)
-    - [Microsoft ML for Beginners (GitHub)](https://github.com/microsoft/ML-For-Beginners)
-
-## Machine Learning II
-- **Core Skills**
-    - Neural Networks & Deep Learning
-    - Natural Language Processing (NLP)
-    - Cloud-Based Model Deployment
-- **Certifications**
-    - [AWS ML Specialty](https://aws.amazon.com/training/awsacademy/)
-    - [Microsoft Azure Fundamentals](https://docs.microsoft.com/en-us/learn/azure/)
-- **Tools and Resources**
-    - [NVIDIA Deep Learning Institute](https://developer.nvidia.com/dli)
-    - [Google Cloud Training](https://cloud.google.com/training)
-
-## Flex Options
-- Natural Language Processing (NLP)
-- Computer Vision
-- AI Ethics and Responsible AI Practices
-`;
-
-    const { Markmap } = window.markmap;
-    Markmap.create('#mindmap', null, { content: markdown });
-</script>
-
-</body>
-</html>
+    <!-- Flex Options -->
+    <g transform="translate(450,300)">
+        <rect x="0" y="0" width="300" height="40" rx="5" fill="#9b59b6" opacity="0.8"/>
+        <text x="150" y="25" text-anchor="middle" fill="white" font-weight="bold">Flex Options</text>
+        
+        <!-- Option boxes -->
+        <g transform="translate(0,50)">
+            <rect x="0" y="0" width="90" height="30" rx="5" fill="#8e44ad" opacity="0.7"/>
+            <text x="45" y="20" text-anchor="middle" fill="white" font-size="12">NLP</text>
+            
+            <rect x="100" y="0" width="90" height="30" rx="5" fill="#8e44ad" opacity="0.7"/>
+            <text x="145" y="20" text-anchor="middle" fill="white" font-size="12">Computer Vision</text>
+            
+            <rect x="200" y="0" width="90" height="30" rx="5" fill="#8e44ad" opacity="0.7"/>
+            <text x="245" y="20" text-anchor="middle" fill="white" font-size="12">AI Ethics</text>
+        </g>
+    </g>
+</svg>
