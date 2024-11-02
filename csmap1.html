@@ -18,56 +18,81 @@
 </head>
 <body>
     <svg id="mindmap"></svg>
-    <script src="https://cdn.jsdelivr.net/npm/d3@6.7.0"></script>
-    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.14.3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.2.7/dist/index.min.js"></script>
     <script>
-        ((c) => {
-            window.addEventListener('load', () => {
-                const { Markmap } = window.markmap;
-                Markmap.create('#mindmap', null, c);
+        document.addEventListener('DOMContentLoaded', () => {
+            const mm = markmap.Markmap.create('svg#mindmap', undefined, {
+                type: 'root',
+                depth: 0,
+                content: 'Machine Learning & Data Science Program',
+                children: [
+                    {
+                        type: 'heading',
+                        depth: 1,
+                        content: 'Data Science I',
+                        children: [
+                            {
+                                type: 'list',
+                                depth: 2,
+                                content: 'Core Skills',
+                                children: [
+                                    { type: 'list-item', depth: 3, content: 'Python Programming' },
+                                    { type: 'list-item', depth: 3, content: 'Data Visualization' },
+                                    { type: 'list-item', depth: 3, content: 'Basic Machine Learning' },
+                                    { type: 'list-item', depth: 3, content: 'Statistical Analysis' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        type: 'heading',
+                        depth: 1,
+                        content: 'Data Science II',
+                        children: [
+                            {
+                                type: 'list',
+                                depth: 2,
+                                content: 'Advanced Skills',
+                                children: [
+                                    { type: 'list-item', depth: 3, content: 'ML Model Deployment' },
+                                    { type: 'list-item', depth: 3, content: 'Data Ethics & Governance' },
+                                    { type: 'list-item', depth: 3, content: 'Advanced Analytics' }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        type: 'heading',
+                        depth: 1,
+                        content: 'Flex Options',
+                        children: [
+                            {
+                                type: 'heading',
+                                depth: 2,
+                                content: 'Machine Learning III',
+                                children: [
+                                    { type: 'list-item', depth: 3, content: 'Deep Learning' },
+                                    { type: 'list-item', depth: 3, content: 'Neural Networks' },
+                                    { type: 'list-item', depth: 3, content: 'Computer Vision' },
+                                    { type: 'list-item', depth: 3, content: 'NLP' }
+                                ]
+                            },
+                            {
+                                type: 'heading',
+                                depth: 2,
+                                content: 'Machine Learning IV',
+                                children: [
+                                    { type: 'list-item', depth: 3, content: 'AI Ethics' },
+                                    { type: 'list-item', depth: 3, content: 'Model Governance' },
+                                    { type: 'list-item', depth: 3, content: 'Enterprise ML' }
+                                ]
+                            }
+                        ]
+                    }
+                ]
             });
-        })(`
-# Machine Learning & Data Science Program
-
-## Data Science I
-### Core Skills
-- Python Programming
-- Data Visualization
-- Basic Machine Learning
-- Statistical Analysis
-
-### Certifications
-- IBM Data Science Professional
-- Google Analytics
-
-### Tools & Resources
-- Google Cloud Training
-- Microsoft Learn
-- Stanford AI Labs
-
-## Data Science II
-### Advanced Skills
-- ML Model Deployment
-- Data Ethics & Governance
-- Advanced Analytics
-
-### Advanced Tools
-- NVIDIA DLI
-- Databricks
-- Azure ML
-
-## Flex Options
-### Machine Learning III
-- Deep Learning
-- Neural Networks
-- Computer Vision
-- NLP
-
-### Machine Learning IV
-- AI Ethics
-- Model Governance
-- Enterprise ML
-`);
+        });
     </script>
 </body>
 </html>
