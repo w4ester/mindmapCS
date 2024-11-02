@@ -1,66 +1,116 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML & DS Mindmap</title>
-    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
     <style>
-        html, body {
-            margin: 0;
+        body { 
+            margin: 0; 
             padding: 0;
             width: 100%;
             height: 100%;
             overflow: hidden;
         }
-        .markmap {
-            width: 100vw;
-            height: 100vh;
-            background: white;
+        #mindmap { 
+            width: 100vw; 
+            height: 100vh; 
+            min-width: 1200px;  /* Minimum width */
+            min-height: 800px;  /* Minimum height */
+        }
+        .markmap-node {
+            font-size: 14px;
+        }
+        .markmap-node-circle {
+            stroke-width: 2px;
+        }
+        .markmap-link {
+            stroke-width: 1.5px;
         }
     </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.0/dist/style.css">
 </head>
 <body>
-<div class="markmap">
-```markmap
+    <svg id="mindmap"></svg>
+    <script src="https://cdn.jsdelivr.net/npm/d3@6.7.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.0"></script>
+    <script>
+    (async () => {
+        const { Markmap, loadCSS, loadJS } = window.markmap;
+        const ml_content = `
 # Machine Learning & Data Science Program
 
 ## Data Science I
 - **Core Skills**
     - Python Programming
     - Data Visualization
-    - Basic Machine Learning
-    - Statistical Analysis
+    - Basic Machine Learning Techniques
+    - Data Analysis Fundamentals
+    - Statistical Methods
 - **Certifications**
-    - IBM Data Science Professional
-    - Google Analytics
-- **Tools & Resources**
-    - Google Cloud Training
-    - Microsoft Learn
-    - Stanford AI Labs
+    - [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science)
+    - [Google Data Analytics](https://www.coursera.org/professional-certificates/google-data-analytics)
+- **Tools and Resources**
+    - [Google Cloud Training](https://cloud.google.com/training)
+    - [Microsoft Data Science for Beginners](https://github.com/microsoft/Data-Science-For-Beginners)
+    - [Stanford AI Labs](https://aieducation.stanford.edu/)
 
 ## Data Science II
 - **Advanced Skills**
-    - ML Model Deployment
-    - Data Ethics & Governance
-    - Advanced Analytics
-- **Advanced Tools**
-    - NVIDIA DLI
-    - Databricks
-    - Azure ML
+    - Advanced Data Processing
+    - Machine Learning Model Deployment
+    - Data Ethics and Governance
+    - Cloud Integration
+    - Production ML Systems
+- **Certifications**
+    - [IBM Watson AI Certification](https://www.coursera.org/learn/ai-watson)
+    - [Google Cloud Data Engineer](https://cloud.google.com/training)
+    - [Azure Data Scientist](https://docs.microsoft.com/learn/certifications/azure-data-scientist)
+- **Tools and Resources**
+    - [NVIDIA Deep Learning Institute](https://developer.nvidia.com/dli)
+    - [Databricks Academy](https://databricks.com/learn)
+    - [AWS Training](https://aws.amazon.com/training)
 
-## Flex Options
+## Flex Courses
 ### Machine Learning III
-- Deep Learning
-- Neural Networks
-- Computer Vision
-- NLP
+- **Advanced Topics**
+    - Deep Learning
+    - Neural Networks
+    - Computer Vision
+    - Natural Language Processing
+    - Reinforcement Learning
+- **Tools**
+    - TensorFlow
+    - PyTorch
+    - Keras
 
 ### Machine Learning IV
-- AI Ethics
-- Model Governance
-- Enterprise ML
-```
-</div>
+- **Capstone Focus**
+    - AI Ethics
+    - Model Governance
+    - Enterprise ML
+    - Research Methods
+    - Industry Projects
+
+## Maryland Resources
+### Universities
+- [Johns Hopkins AI Lab](https://ai.jhu.edu)
+- [UMD Machine Learning](https://www.cs.umd.edu/ml)
+- [UMBC Data Science](https://datascience.umbc.edu)
+
+### Community Colleges
+- [Montgomery College](https://www.montgomerycollege.edu)
+- [PGCC Programs](https://www.pgcc.edu)
+- [CCBC Tech](https://www.ccbcmd.edu)
+`;
+        const mm = new Markmap(document.querySelector('#mindmap'), {
+            autoFit: true,
+            zoom: true,
+            initialExpandLevel: 3,
+            color: d3.scaleOrdinal(d3.schemeCategory10),
+            paddingX: 100,
+            maxWidth: 500,
+        }, ml_content);
+    })();
+    </script>
 </body>
 </html>
