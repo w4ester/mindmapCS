@@ -1,122 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Machine Learning & Data Science Program Mind Map</title>
+    <title>ML & DS Program Mind Map</title>
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            width: 100vw;
-            overflow: hidden;
-            background: #fff;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-        }
-        #mindmap {
-            width: 100%;
-            height: 100%;
-        }
-        .markmap-toolbar {
-            position: fixed;
-            right: 10px;
-            top: 10px;
-        }
+        body { margin: 0; height: 100vh; }
     </style>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.14.4/dist/style.css">
 </head>
 <body>
-    <svg id="mindmap"></svg>
-    <script src="https://cdn.jsdelivr.net/npm/d3@6.7.0/dist/d3.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.14.4/dist/browser/index.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.14.4/dist/index.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-lib@0.14.4/dist/browser/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.14.4/dist/browser/index.js"></script>
+    <div id="mindmap" style="width: 100%; height: 100vh;"></div>
     <script>
-        // Wait for all resources to load
-        window.addEventListener('load', () => {
-            const markdown = `
-# Machine Learning & Data Science Program 🎓
-
-## Core Courses 📚
-### ML & DS I - Foundations
-- **Core Skills** 💻
+        window.addEventListener('load', async () => {
+            const { Markmap, loadCSS, loadJS } = window.markmap;
+            const { baseUrl, urlFrag } = {}
+            const initial = `
+# Machine Learning & Data Science Program
+## Core Courses
+### ML & DS I
+- Core Skills
   - Python Programming
   - Data Visualization
   - Basic ML Techniques
-- **Certifications** 🏆
-  - [IBM Data Science Certificate](https://www.coursera.org/professional-certificates/ibm-data-science)
-  - [Google Data Analytics](https://www.coursera.org/professional-certificates/google-data-analytics)
+- Certifications
+  - IBM Data Science Professional
+  - Google Analytics
 
-### ML & DS II - Advanced
-- **Advanced Skills** 🚀
+### ML & DS II  
+- Advanced Skills
   - ML Model Deployment
-  - Data Ethics & Governance
+  - Data Ethics
   - Cloud Integration
-- **Resources** 📱
-  - [NVIDIA DLI](https://developer.nvidia.com/dli)
-  - [Azure ML](https://azure.microsoft.com/en-us/services/machine-learning/)
+- Resources
+  - NVIDIA DLI
+  - Azure ML
 
-## Flex Courses 🔄
-### ML & DS III - Specialization
-- **Focus Areas** 🎯
-  - Deep Learning
-  - Natural Language Processing
-  - Computer Vision
-- **Tools** 🛠
-  - TensorFlow
-  - PyTorch
-  - Keras
+## Flex Options
+### ML & DS III
+- Deep Learning
+- Natural Language Processing
+- Computer Vision
 
-### ML & DS IV - Capstone
-- **Project Areas** 🌟
-  - Industry Projects
-  - Research Integration
-  - Ethics & AI Governance
+### ML & DS IV
+- Cloud Integration
+- Model Deployment
+- Advanced Ethics
 
-## Maryland Resources 🏛
-### Universities
-- [Johns Hopkins AI Lab](https://ai.jhu.edu)
-- [UMD Machine Learning](https://www.cs.umd.edu/ml)
-- [UMBC Data Science](https://datascience.umbc.edu)
+## Resources
+### Maryland Universities
+- Johns Hopkins
+- UMD
+- UMBC
 
-### Community Colleges
-- [Montgomery College](https://www.montgomerycollege.edu)
-- [PGCC Programs](https://www.pgcc.edu)
-- [CCBC Tech](https://www.ccbcmd.edu)
-
-## Career Pathways 🚀
-### Internships
-- Industry Partners
-- Research Labs
-- Government Agencies
-
-### Certifications
-- Cloud Platforms
-- ML Specialties
-- Data Engineering
+### Industry Tools
+- Google Cloud
+- AWS
+- Azure
 `;
-
-            // Initialize the mindmap
-            const mm = new markmap.Markmap('#mindmap', { 
-                embedAssets: true,
-                height: window.innerHeight,
-                width: window.innerWidth,
-                zoom: true,
-                pan: true
-            });
-
-            // Load the content
-            mm.setData(new markmap.deriveOptions(markdown));
-
-            // Add toolbar
-            const toolbar = new markmapToolbar.MarkmapToolbar();
-            toolbar.register(mm);
-            document.body.appendChild(toolbar.el);
-
-            // Handle window resize
-            window.addEventListener('resize', () => {
-                mm.setData(mm.getData());
-            });
+            const mm = new Markmap('#mindmap', undefined, initial);
         });
     </script>
 </body>
