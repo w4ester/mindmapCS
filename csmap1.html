@@ -2,43 +2,57 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>ML & DS Mind Map</title>
-    <script src="https://cdn.jsdelivr.net/npm/markmap-autoloader"></script>
+    <title>ML & DS Mindmap</title>
+    <style>
+        body { margin: 0; }
+        #mindmap { width: 100vw; height: 100vh; }
+    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.0/dist/style.css">
 </head>
 <body>
-<div class="markmap" style="height: 100vh">
-
+    <svg id="mindmap"></svg>
+    <script src="https://cdn.jsdelivr.net/npm/d3@6.7.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.0"></script>
+    <script>
+    (async () => {
+        const { Markmap, loadCSS, loadJS } = window.markmap;
+        const ml_content = `
 # Machine Learning & Data Science
-## Core Courses
-### ML & DS I
-- Core Skills
-  - Python Programming
-  - Data Visualization
-  - Basic ML
-- Certifications
-  - IBM Data Science
-  - Google Analytics
 
-### ML & DS II
-- Advanced Skills
-  - ML Deployment
-  - Data Ethics
-  - Cloud Integration
-- Resources
-  - NVIDIA DLI
-  - Azure ML
+## Data Science I
+- **Core Skills**
+    - Python Programming
+    - Data Visualization
+    - Basic Machine Learning Techniques
+- **Certifications**
+    - [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science)
+- **Tools and Resources**
+    - [Google Cloud Training](https://cloud.google.com/training)
+    - [Microsoft Data Science for Beginners](https://github.com/microsoft/Data-Science-For-Beginners)
+    - [Stanford AI Labs](https://aieducation.stanford.edu/)
+
+## Data Science II
+- **Core Skills**
+    - Advanced Data Processing
+    - Machine Learning Model Deployment
+    - Data Ethics and Governance
+- **Certifications**
+    - [IBM Watson AI Certification](https://www.coursera.org/learn/ai-watson)
+    - [Google Cloud Data Engineer](https://cloud.google.com/training)
+- **Tools and Resources**
+    - [NVIDIA Deep Learning Institute](https://developer.nvidia.com/dli)
+    - [Databricks Academy](https://databricks.com/learn)
 
 ## Flex Options
-### ML & DS III
-- Deep Learning
-- NLP
+- Natural Language Processing (NLP)
 - Computer Vision
-
-### ML & DS IV
-- Cloud Integration
-- Model Deployment
-- Advanced Ethics
-
-</div>
+- AI Ethics and Responsible AI Practices
+`;
+        const mm = new Markmap(document.querySelector('#mindmap'), {
+            autoFit: true,
+            zoom: true,
+        }, ml_content);
+    })();
+    </script>
 </body>
 </html>
