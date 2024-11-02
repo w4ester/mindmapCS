@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine Learning & Data Science Program Mind Map</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.0/dist/style.css">
+</head>
+<body style="margin:0">
+    <svg id="mindmap" style="width:100vw;height:100vh"></svg>
+    <script src="https://cdn.jsdelivr.net/npm/d3@6.7.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-view@0.15.0"></script>
+    <script src="https://cdn.jsdelivr.net/npm/markmap-toolbar@0.15.0"></script>
+
+<script>
+const markdown = `
+# Machine Learning & Data Science Program
+
+## Core Course Sequence
+### Machine Learning & Data Science I
+- **Core Skills**
+  - Python Programming
+  - Data Visualization
+  - Basic ML Techniques
+- **Certifications**
+  - [IBM Data Science Professional Certificate](https://www.coursera.org/professional-certificates/ibm-data-science)
+- **Tools & Resources**
+  - [Google Cloud Training](https://cloud.google.com/training)
+  - [Microsoft Data Science for Beginners](https://github.com/microsoft/Data-Science-For-Beginners)
+  - [Stanford AI Labs](https://aieducation.stanford.edu/)
+
+### Machine Learning & Data Science II
+- **Advanced Skills**
+  - Advanced Data Processing
+  - ML Model Deployment
+  - Data Ethics & Governance
+- **Certifications**
+  - [Azure AI Fundamentals](https://docs.microsoft.com/en-us/learn/azure/)
+  - [Google Cloud Data Engineer](https://cloud.google.com/certification/data-engineer)
+- **Tools & Resources**
+  - [NVIDIA Deep Learning Institute](https://developer.nvidia.com/dli)
+  - [Databricks Academy](https://databricks.com/learn)
+
+## Flex Course Options
+### Machine Learning & Data Science III
+- **Advanced Topics**
+  - Deep Learning & Neural Networks
+  - Natural Language Processing
+  - Computer Vision Applications
+- **Certifications**
+  - [AWS Machine Learning Specialty](https://aws.amazon.com/certification/certified-machine-learning-specialty/)
+- **Tools & Resources**
+  - [Johns Hopkins AI Lab Resources](https://ai.jhu.edu/)
+  - [Stanford CRAFT](https://craft.stanford.edu/)
+
+### Machine Learning & Data Science IV
+- **Capstone Focus**
+  - Cloud Integration
+  - Model Deployment at Scale
+  - Advanced AI Ethics
+- **Industry Tools**
+  - [Azure ML Studio](https://azure.microsoft.com/en-us/services/machine-learning/)
+  - [AWS SageMaker](https://aws.amazon.com/sagemaker/)
+
+## Career Pathways
+### Work-Based Learning
+- **Career Awareness (Course I)**
+  - Industry Visits
+  - Guest Speakers
+  - Career Fairs
+- **Career Preparation (Course II)**
+  - Job Shadowing
+  - Internships
+  - Industry Projects
+- **Career Training (Flex Courses)**
+  - Paid Internships
+  - Apprenticeships
+  - Industry Certifications
+
+### Maryland Programs
+- **Universities**
+  - [Johns Hopkins University](https://ai.jhu.edu/)
+  - [University of Maryland](https://mlds.umd.edu/)
+  - [UMBC](https://datascience.umbc.edu/)
+- **Community Colleges**
+  - [Montgomery College](https://www.montgomerycollege.edu/)
+  - [PGCC](https://www.pgcc.edu/)
+  - [CCBC](https://www.ccbcmd.edu/)
+
+## Industry Resources
+### Learning Platforms
+- [Google Cloud Training](https://cloud.google.com/training)
+- [Microsoft Learn](https://docs.microsoft.com/en-us/learn/)
+- [AWS Training](https://aws.amazon.com/training/)
+
+### Development Tools
+- [GitHub Student Pack](https://education.github.com/pack)
+- [Google Colab](https://colab.research.google.com/)
+- [Kaggle](https://www.kaggle.com/)
+`;
+
+const { Markmap } = window.markmap;
+Markmap.create("#mindmap", null, { content: markdown });
+</script>
+</body>
+</html>
